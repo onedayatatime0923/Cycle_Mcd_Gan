@@ -159,25 +159,15 @@ tensorboard --logdir log
 ```
 
 
-## Related Projects:
-[pix2pix](https://github.com/phillipi/pix2pix): Image-to-image translation using conditional adversarial nets  
-[iGAN](https://github.com/junyanz/iGAN): Interactive Image Generation via Generative Adversarial Networks
-
-## Cat Paper Collection
-If you love cats, and love reading cool graphics, vision, and learning papers, please check out the Cat Paper Collection:  
-[[Github]](https://github.com/junyanz/CatPapers) [[Webpage]](http://people.eecs.berkeley.edu/~junyanz/cat/cat_papers.html)
 
 ## Acknowledgments
+code is done in iis sinica.
 
 
 ## Related Projects:
 
-**CycleGAN: [Project](https://junyanz.github.io/CycleGAN/) |  [Paper](https://arxiv.org/pdf/1703.10593.pdf) |  [Torch](https://github.com/junyanz/CycleGAN)**
-<img src="https://junyanz.github.io/CycleGAN/images/teaser_high_res.jpg" width="800"/>
+**CycleGAN: [Project](https://junyanz.github.io/CycleGAN/) |  [Paper](https://arxiv.org/pdf/1703.10593.pdf)**
 
+**MCD_DA:  [Project](https://github.com/mil-tokyo/MCD_DA) |  [Paper](https://arxiv.org/abs/1712.02560.pdf)**
 
-**Pix2pix:  [Project](https://phillipi.github.io/pix2pix/) |  [Paper](https://arxiv.org/pdf/1611.07004v1.pdf) |  [Torch](https://github.com/phillipi/pix2pix)**
-
-<img src="https://phillipi.github.io/pix2pix/images/teaser_v3.png" width="800px"/>
-`kdjflk`
 
