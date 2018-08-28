@@ -88,7 +88,7 @@ GTA
 ```
 python3 datamanager/split_gta.py [directory of Cityscapes Dataset] [path of split.mat]
 ```
-**Note**: the datastructure will become like this
+    **Note**: the datastructure will become like this
 
 ```
 Cityscapes
