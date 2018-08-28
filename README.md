@@ -18,6 +18,11 @@ The code was written by [Chia-Ming Chang](https://github.com/onedayatatime0923).
 ### Installation
 - Install torch and dependencies from https://github.com/torch/distro
 - Install tensorboardX from https://github.com/lanpa/tensorboardX
+- Clone this repo:
+```bash
+git clone https://github.com/onedayatatime0923/Cycle_Mcd_Gan
+cd Cycle_Mcd_Gan
+```
 
 ### Dataset
 
