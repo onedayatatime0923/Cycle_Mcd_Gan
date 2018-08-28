@@ -23,25 +23,48 @@ The code was written by [Chia-Ming Chang](https://github.com/onedayatatime0923).
 
 #### Cityscapes
 - Download **gtFine_trainvaltest.zip** and **leftImg8bit_trainvaltest.zip** from https://www.cityscapes-dataset.com/downloads/
-- Unzip
-
+- Unzip both file
+- Rename the directory as followed
 ```
-project
-│   README.md
-│   file001.txt    
-│
-└───folder1
-│   │   file011.txt
-│   │   file012.txt
+Cityscapes
+└───image
+│   └───train
+│   │   └───aachen
+│   │   │     aachen_000000_000019_leftImg8bit.png
+│   │   │     ...
+│   │		...
 │   │
-│   └───subfolder1
-│       │   file111.txt
-│       │   file112.txt
-│       │   ...
+│   └───val
+│   │   └───frankfurt
+│   │   │     frankfurt_000000_000294_leftImg8bit.png
+│   │   │     ...
+│   │		...
+│   │
+│   └───test
+│       └───berlin
+│       │     berlin_000000_000019_leftImg8bit.png
+│       │     ...
+│    		...
 │   
-└───folder2
-    │   file021.txt
-    │   file022.txt
+└───label
+    └───train
+    │   └───aachen
+    │   │     aachen_000000_000019_leftImg8bit.png
+    │   │     ...
+    │		...
+    │
+    └───val
+    │   └───frankfurt
+    │   │     frankfurt_000000_000294_leftImg8bit.png
+    │   │     ...
+    │		...
+    │
+    └───test
+        └───berlin
+        │     berlin_000000_000019_leftImg8bit.png
+        │     ...
+     		...
+    
 ```
 
 
