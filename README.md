@@ -67,12 +67,12 @@ Cityscapes
 ```
 - Generate txt file
 python3 datamanager/generate_txt.py [directory of Cityscapes Dataset]
-```
 
 #### GTA
 - Download **all the images and labels** and **split.mat** from https://download.visinf.tu-darmstadt.de/data/from_games/
 - Unzip all files
 - Rename the directory as followed
+```
 ```
 
 
