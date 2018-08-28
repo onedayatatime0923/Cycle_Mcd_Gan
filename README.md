@@ -75,6 +75,32 @@ python3 datamanager/generate_txt.py [directory of Cityscapes Dataset]
 - Unzip all files
 - Rename the directory as followed
 ```
+Cityscapes
+└───image
+│   └───train
+│   │     aachen_000000_000019_leftImg8bit.png
+│   │     ...
+│   │
+│   └───val
+│   │     aachen_000000_000019_leftImg8bit.png
+│   │     ...
+│   │
+│   └───test
+│         aachen_000000_000019_leftImg8bit.png
+│         ...
+│   
+└───label
+    └───train
+    │     aachen_000000_000019_gtFine_labelIds.png
+    │     ...
+    │
+    └───val
+    │     aachen_000000_000019_gtFine_labelIds.png
+    │     ...
+    │
+    └───test
+          aachen_000000_000019_gtFine_labelIds.png
+          ...
 ```
 
 
