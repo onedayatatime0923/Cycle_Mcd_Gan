@@ -64,7 +64,6 @@ Cityscapes
         │     berlin_000000_000019_gtFine_labelIds.png
         │     ...
         ...
-    
 ```
 
 
