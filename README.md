@@ -23,7 +23,7 @@ The code was written by [Chia-Ming Chang](https://github.com/onedayatatime0923).
 
 #### Cityscapes
 - Download **gtFine_trainvaltest.zip** and **leftImg8bit_trainvaltest.zip** from https://www.cityscapes-dataset.com/downloads/
-- Unzip both file
+- Unzip both files
 - Rename the directory as followed
 ```
 Cityscapes
@@ -65,6 +65,16 @@ Cityscapes
         │     ...
         ...
 ```
+- Generate txt file
+python3 datamanager/generate_txt.py [directory of Cityscapes Dataset]
+```
+
+#### GTA
+- Download **all the images and labels** and **split.mat** from https://download.visinf.tu-darmstadt.de/data/from_games/
+- Unzip all files
+- Rename the directory as followed
+```
+
 
 
 **CycleGAN: [Project](https://junyanz.github.io/CycleGAN/) |  [Paper](https://arxiv.org/pdf/1703.10593.pdf) |  [Torch](https://github.com/junyanz/CycleGAN)**
