@@ -19,6 +19,9 @@ The code was written by [Chia-Ming Chang](https://github.com/onedayatatime0923).
 - Install torch and dependencies from https://github.com/torch/distro
 - Install tensorboardX from https://github.com/lanpa/tensorboardX
 
+### Dataset
+- Download Cityscapes dataset --**gtFine_trainvaltest.zip** and **leftImg8bit_trainvaltest.zip**-- from https://www.cityscapes-dataset.com/downloads/
+
 **CycleGAN: [Project](https://junyanz.github.io/CycleGAN/) |  [Paper](https://arxiv.org/pdf/1703.10593.pdf) |  [Torch](https://github.com/junyanz/CycleGAN)**
 <img src="https://junyanz.github.io/CycleGAN/images/teaser_high_res.jpg" width="800"/>
 
