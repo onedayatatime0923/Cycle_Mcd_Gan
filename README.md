@@ -49,19 +49,19 @@ Cityscapes
 └───label
     └───train
     │   └───aachen
-    │   │     aachen_000000_000019_leftImg8bit.png
+    │   │     aachen_000000_000019_gtFine_labelIds.png
     │   │     ...
     │   ...
     │
     └───val
     │   └───frankfurt
-    │   │     frankfurt_000000_000294_leftImg8bit.png
+    │   │     frankfurt_000000_000294_gtFine_labelIds.png
     │   │     ...
     │   ...
     │
     └───test
         └───berlin
-        │     berlin_000000_000019_leftImg8bit.png
+        │     berlin_000000_000019_gtFine_labelIds.png
         │     ...
         ...
     
