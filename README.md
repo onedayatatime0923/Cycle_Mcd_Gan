@@ -91,10 +91,9 @@ GTA
 ```
 - Split data
 ```
-python3 datamanager/split_gta.py [directory of Cityscapes Dataset] [path of split.mat]
+python3 datamanager/split_gta.py [directory of GTA Dataset] [path of split.mat]
 ```
 **Note**: the datastructure will become like this
-
 ```
 Cityscapes
 └───image
@@ -123,8 +122,55 @@ Cityscapes
           aachen_000000_000019_gtFine_labelIds.png
           ...
 ```
+- Generate txt file
+```
+python3 datamanager/generate_txt.py [directory of GTA Dataset]
+```
+### Train
+- Train a model:
+```bash
+python3 cycle_mcd_trainer.py
+```
+## Display UI
+Optionally, for displaying images during training and test, use the [tensorboardX](https://github.com/lanpa/tensorboardX)
+```bash
+cd checkpoints/cycle_mcd_da
+tensorboard --logdir log
+```
+## Citation
+
+```
+@inproceedings{CycleGAN2017,
+  title={Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networkss},
+  author={Zhu, Jun-Yan and Park, Taesung and Isola, Phillip and Efros, Alexei A},
+  booktitle={Computer Vision (ICCV), 2017 IEEE International Conference on},
+  year={2017}
+}
+
+```
+```
+@article{saito2017maximum,
+  title={Maximum Classifier Discrepancy for Unsupervised Domain Adaptation},
+  author={Saito, Kuniaki and Watanabe, Kohei and Ushiku, Yoshitaka and Harada, Tatsuya},
+  journal={arXiv preprint arXiv:1712.02560},
+  year={2017}
+}
+
+```
 
 
+## Related Projects:
+[pix2pix](https://github.com/phillipi/pix2pix): Image-to-image translation using conditional adversarial nets  
+[iGAN](https://github.com/junyanz/iGAN): Interactive Image Generation via Generative Adversarial Networks
+
+## Cat Paper Collection
+If you love cats, and love reading cool graphics, vision, and learning papers, please check out the Cat Paper Collection:  
+[[Github]](https://github.com/junyanz/CatPapers) [[Webpage]](http://people.eecs.berkeley.edu/~junyanz/cat/cat_papers.html)
+
+## Acknowledgments
+
+
+## Related Projects:
 
 **CycleGAN: [Project](https://junyanz.github.io/CycleGAN/) |  [Paper](https://arxiv.org/pdf/1703.10593.pdf) |  [Torch](https://github.com/junyanz/CycleGAN)**
 <img src="https://junyanz.github.io/CycleGAN/images/teaser_high_res.jpg" width="800"/>
