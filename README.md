@@ -27,10 +27,15 @@ The code was written by [Chia-Ming Chang](https://github.com/onedayatatime0923).
 
 .
 +-- _config.yml
+
 +-- _drafts
+
 |   +-- begin-with-the-crazy-ideas.textile
+
 |   +-- on-simplicity-in-technology.markdown
+
 +-- _includes
+
 |   +-- footer.html
 |   +-- header.html
 +-- _layouts
