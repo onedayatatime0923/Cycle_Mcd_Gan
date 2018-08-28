@@ -7,6 +7,7 @@ for tag in tags:
     splitFile = sys.argv[2] #'../../Segmentation_dataset/GTA/mapping/split.mat'
 
     split = scipy.io.loadmat(splitFile)
+
     trainIds = list(split['trainIds'].reshape(-1))
     valIds = list(split['valIds'].reshape(-1))
     testIds = list(split['testIds'].reshape(-1))
