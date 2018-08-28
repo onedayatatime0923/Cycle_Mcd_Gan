@@ -75,6 +75,22 @@ python3 datamanager/generate_txt.py [directory of Cityscapes Dataset]
 - Unzip all files
 - Rename the directory as followed
 ```
+GTA
+└───image
+│     aachen_000000_000019_leftImg8bit.png
+│     ...
+│   
+└───label
+      aachen_000000_000019_leftImg8bit.png
+      ...
+```
+- Split data
+```
+python3 datamanager/split_gta.py [directory of Cityscapes Dataset] [path of split.mat]
+```
+**Note**: the datastructure will become like this
+
+```
 Cityscapes
 └───image
 │   └───train
