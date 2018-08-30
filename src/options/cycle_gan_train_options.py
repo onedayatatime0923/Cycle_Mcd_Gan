@@ -1,14 +1,18 @@
-from .base_options import BaseOptions
+
+import sys
+sys.path.append('./')
+from options.base_options import BaseOptions
 
 
 class CycleGanTrainOptions(BaseOptions):
     def __init__(self):
-        self.mode = "train"
+        super(CycleGanTrainOptions, self).__init__()
     def initialize(self, parser):
         parser = BaseOptions.initialize(self, parser)
+        # ---------- Define Mode ---------- #
+        parser.set_defaults(mode= 'train')
         # ---------- Define Network ---------- #
-        parser.add_argument('--model', type=str, default="cycle_gan", choices = ['mcd','cycle_mcd'],
-                            help="Method Name")
+        parser.set_defaults(model= 'cycle_gan')
         parser.add_argument('--ngf', type=int, default=64, help='# of gen filters in first conv layer')
         parser.add_argument('--ndf', type=int, default=64, help='# of discrim filters in first conv layer')
         parser.add_argument('--which_model_netG', type=str, default='resnet_9blocks', help='selects model to use for netG')
@@ -26,14 +30,8 @@ class CycleGanTrainOptions(BaseOptions):
                 choices=["gta_train", "gta_val", "city_train", "city_val"],
                 default = "city_train")
         # ---------- Optimizers ---------- #
-        parser.add_argument('--opt', type=str, default="adam", choices=['sgd', 'adam'],
-                            help="cycle gan network optimizer")
-        parser.add_argument("--adjustLr", action="store_false",
-                            help='whether you change lr')
-        parser.add_argument('--lr_policy', type=str, default='lambda',
-                            help='learning rate policy: lambda|step|plateau')
-        parser.add_argument('--lr_decay_iters', type=int, default=50,
-                            help='multiply by a gamma every lr_decay_iters iterations')
+        parser.set_defaults(opt= 'adam')
+        parser.set_defaults(adjustLr= True)
         # ---------- Hyperparameters ---------- #
         parser.add_argument('--lsgan', action='store_false', help='do not use least square GAN, if specified, use vanilla GAN')
         parser.add_argument('--pool_size', type=int, default=50, help='the size of image buffer that stores previously generated images')
@@ -42,17 +40,13 @@ class CycleGanTrainOptions(BaseOptions):
         parser.add_argument('--lambdaB', type=float, default=10.0,
                                 help='weight for cycle loss (B -> A -> B)')
         parser.add_argument('--lambdaIdentity', type=float, default=0.5, help='use identity mapping. Setting lambda_identity other than 0 has an effect of scaling the weight of the identity mapping loss. For example, if the weight of the identity loss should be 10 times smaller than the weight of the reconstruction loss, please set lambda_identity = 0.1')
-        # ---------- Train Details ---------- #
-        parser.add_argument('--epochStart', type=int, default=1, 
-                            help='the starting epoch count.')
-        parser.add_argument('--nEpochStart', type=int, default=100, 
-                            help='# of epoch at starting learning rate')
-        parser.add_argument('--nEpochDecay', type=int, default=100, 
-                            help='# of epoch to linearly decay learning rate to zero')
+        parser.set_defaults(epoch= 1)
+        parser.set_defaults(nEpochStart= 100)
+        parser.set_defaults(nEpochDecay= 100)
+        # ---------- Optional Hyperparameters ---------- #
+        parser.set_defaults(augment= True)
         # ---------- Experiment Setting ---------- #
-        parser.add_argument('--name', type=str, default='cycle_gan', 
-                            help='name of the experiment. It decides where to store samples and models')
-        parser.add_argument('--displayWidth', type=int, default=4,
-                            help='frequency of showing training results on screen')
+        parser.set_defaults(name= 'cycle_gan')
+        parser.set_defaults(displayWidth= 4)
 
         return parser

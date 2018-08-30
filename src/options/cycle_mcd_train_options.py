@@ -1,14 +1,18 @@
-from .base_options import BaseOptions
+
+import sys
+sys.path.append('./')
+from options.base_options import BaseOptions
 
 
 class CycleMcdTrainOptions(BaseOptions):
     def __init__(self):
-        self.mode = "train"
+        super(CycleMcdTrainOptions, self).__init__()
     def initialize(self, parser):
         parser = BaseOptions.initialize(self, parser)
+        # ---------- Define Mode ---------- #
+        parser.set_defaults(mode= 'train')
         # ---------- Define Network ---------- #
-        parser.add_argument('--model', type=str, default="cycle_mcd", choices = ['mcd','cycle_mcd'],
-                            help="Method Name")
+        parser.set_defaults(model= 'cycle_mcd')
         parser.add_argument('--segNet', type=str, default="drn_d_38", help="network structure",
                             choices=['fcn', 'psp', 'segnet', 'fcnvgg',
                                      "drn_c_26", "drn_c_42", "drn_c_58", "drn_d_22",
@@ -44,12 +48,7 @@ class CycleMcdTrainOptions(BaseOptions):
                             help="cycle gan network optimizer")
         parser.add_argument('--mcdOpt', type=str, default="sgd", choices=['sgd', 'adam'],
                             help="mcd network optimizer")
-        parser.add_argument("--adjustLr", action="store_false",
-                            help='whether you change lr')
-        parser.add_argument('--lr_policy', type=str, default='lambda',
-                            help='learning rate policy: lambda|step|plateau')
-        parser.add_argument('--lr_decay_iters', type=int, default=50,
-                            help='multiply by a gamma every lr_decay_iters iterations')
+        parser.set_defaults(adjustLr = True)
         # ---------- Train Details ---------- #
         parser.add_argument('--k', type=int, default=4,
                             help='how many steps to repeat the generator update')
@@ -59,12 +58,6 @@ class CycleMcdTrainOptions(BaseOptions):
         parser.add_argument('--dLoss', type=str, default="diff",
                             choices=['mysymkl', 'symkl', 'diff'],
                             help="choose from ['mysymkl', 'symkl', 'diff']")
-        parser.add_argument('--epochStart', type=int, default=1, 
-                            help='the starting epoch count.')
-        parser.add_argument('--nEpochStart', type=int, default=10, 
-                            help='# of epoch at starting learning rate')
-        parser.add_argument('--nEpochDecay', type=int, default=10, 
-                            help='# of epoch to linearly decay learning rate to zero')
         # ---------- Hyperparameters ---------- #
         parser.add_argument('--lsgan', action='store_false', help='do not use least square GAN, if specified, use vanilla GAN')
         parser.add_argument('--pool_size', type=int, default=50, help='the size of image buffer that stores previously generated images')
@@ -73,10 +66,11 @@ class CycleMcdTrainOptions(BaseOptions):
         parser.add_argument('--lambdaB', type=float, default=10.0,
                                 help='weight for cycle loss (B -> A -> B)')
         parser.add_argument('--lambdaIdentity', type=float, default=0.5, help='use identity mapping. Setting lambda_identity other than 0 has an effect of scaling the weight of the identity mapping loss. For example, if the weight of the identity loss should be 10 times smaller than the weight of the reconstruction loss, please set lambda_identity = 0.1')
+        parser.set_defaults(epoch= 1)
+        parser.set_defaults(nEpochStart= 10)
+        parser.set_defaults(nEpochDecay= 10)
         # ---------- Experiment Setting ---------- #
-        parser.add_argument('--name', type=str, default='cycle_mcd_da', 
-                            help='name of the experiment. It decides where to store samples and models')
-        parser.add_argument('--displayWidth', type=int, default=4,
-                            help='frequency of showing training results on screen')
+        parser.set_defaults(name= 'cycle_mcd_da')
+        parser.set_defaults(displayWidth= 4)
 
         return parser

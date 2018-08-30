@@ -32,12 +32,18 @@ class BaseModel():
 
     # load and print networks; create schedulers
     def setup(self, parser=None):
+        print('-------------- Networks initialized --------------')
         if self.opt.mode == 'train':
             self.schedulers = [createScheduler(optimizer, self.opt) for optimizer in self.optimizers]
+            if self.opt.pretrained:
+                self.load_pretrained()
+            elif self.opt.resume:
+                self.load_networks(self.opt.resumeName)
 
-        if self.opt.mode == 'test' or self.opt.resume:
-            self.load_networks(self.opt.epochContinue)
+        if self.opt.mode == 'test':
+            self.load_networks(self.opt.resumeName)
         self.print_networks(self.opt.verbose)
+        print('--------------------------------------------------')
 
     # update learning rate (called once every epoch)
     def update_learning_rate(self):
@@ -101,6 +107,23 @@ class BaseModel():
                 torch.save(net.cpu().state_dict(), save_path)
 
     # load models from the disk
+    def load_pretrained(self):
+        for name in self.modelNames:
+            load_filename = 'latest_net_%s.pth' % (name)
+            load_path = os.path.join(self.opt.pretrainedRoot, load_filename)
+            net = getattr(self, name)
+            if isinstance(net, torch.nn.DataParallel):
+                net = net.module
+            print('loading the model from %s' % load_path)
+            # if you are using PyTorch newer than 0.4 (e.g., built from
+            # GitHub source), you can remove str() on self.device
+            state_dict = torch.load(load_path, map_location=str(self.opt.device))
+            if hasattr(state_dict, '_metadata'):
+                del state_dict._metadata
+
+            net.load_state_dict(state_dict)
+
+    # load models from the disk
     def load_networks(self, nEpoch):
         for name in self.modelNames:
             load_filename = '%s_net_%s.pth' % (nEpoch, name)
@@ -111,7 +134,7 @@ class BaseModel():
             print('loading the model from %s' % load_path)
             # if you are using PyTorch newer than 0.4 (e.g., built from
             # GitHub source), you can remove str() on self.device
-            state_dict = torch.load(load_path, map_location=str(self.device))
+            state_dict = torch.load(load_path, map_location=str(self.opt.device))
             if hasattr(state_dict, '_metadata'):
                 del state_dict._metadata
 
@@ -119,7 +142,6 @@ class BaseModel():
 
     # print network information
     def print_networks(self, verbose):
-        print('-------------- Networks initialized --------------')
         for name in self.modelNames:
             net = getattr(self, name)
             num_params = sum(p.numel() for p in net.parameters() if p.requires_grad)
@@ -127,7 +149,6 @@ class BaseModel():
                 print(net)
             print('[Network %s] Total number of parameters : %.3f M' 
                     % (name, num_params / 1e6))
-        print('--------------------------------------------------')
 
     # set requies_grad=Fasle to avoid computation
     def set_requires_grad(self, nets, requires_grad=False):
@@ -148,7 +169,7 @@ class BaseModel():
 def createScheduler(optimizer, opt):
     if opt.lr_policy == 'lambda':
         def lambda_rule(epoch):
-            lr_l = 1.0 - max(0, epoch + 1 + opt.epochStart - opt.nEpochStart) / float(opt.nEpochDecay + 1)
+            lr_l = 1.0 - max(0, epoch + 1 + opt.epoch - opt.nEpochStart) / float(opt.nEpochDecay + 1)
             return lr_l
         scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda_rule)
     elif opt.lr_policy == 'step':

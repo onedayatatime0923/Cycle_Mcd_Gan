@@ -14,7 +14,7 @@ class CycleGanModel(BaseModel):
         
         # specify the training losses you want to print out. The program will call base_model.get_current_losses
         self.lossNames = ['loss{}'.format(i) for i in 
-            ['GenA', 'DisA', 'CycleA', 'IdtA', 'DisB', 'GenB', 'CycleB', 'IdtB']]
+            ['GenA', 'DisA', 'CycleA', 'IdtA', 'GenB', 'DisB', 'CycleB', 'IdtB']]
         self.lossGenA, self.lossDisA, self.lossCycleA, self.lossIdtA = 0,0,0,0
         self.lossGenB, self.lossDisB, self.lossCycleB, self.lossIdtB = 0,0,0,0
 

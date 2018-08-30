@@ -7,11 +7,11 @@ import torch
 from torch.autograd import Variable
 from torchvision.transforms import Compose
 # Custom includes
-from visualizer import Visualizer
-from options import McdTrainOptions
-from dataset import ConcatDataset, createDataset
+from visualizer import TrainVisualizer
+from options import CycleMcdTrainOptions
+from dataset import CycleMcdDataset, createDataset
 from models import createModel
-from utils import RandomRotation, RandomResizedCrop, Resize, ToTensor, Normalize, RandomHorizontalFlip, Colorize, Denormalize
+from utils import RandomRotation, RandomCrop, Resize, ToTensor, Normalize, RandomHorizontalFlip, Colorize, Denormalize
 
 assert torch and Variable
 
@@ -24,21 +24,20 @@ def plot_seg(im):
     plt.imshow(im)
     plt.show()
 
-opt = McdTrainOptions().parse()
+opt = CycleMcdTrainOptions().parse()
 
 # set model
 
 model = createModel(opt)
 model.setup(opt)
 
-
 # set dataloader
 
 if opt.augment:
     transformList = [
-        RandomRotation(10),
-        RandomResizedCrop(),
         Resize(opt.loadSize),
+        RandomCrop(opt.fineSize),
+        RandomRotation(opt.rotate),
         ToTensor(),
         Normalize([.485, .456, .406], [.229, .224, .225]),
         RandomHorizontalFlip(),
@@ -52,48 +51,52 @@ else:
 
 transform = Compose(transformList)
 
-sourceDataset = createDataset(opt.sourceDataset,
+supervisedADataset = createDataset([opt.supervisedADataset], 
+        transform= transform, outputFile = False)
+supervisedBDataset = createDataset([opt.supervisedBDataset], 
+        transform= transform, outputFile = False)
+unsupervisedADataset = createDataset([opt.unsupervisedADataset], 
+        transform= transform, outputFile = False)
+unsupervisedBDataset = createDataset([opt.unsupervisedBDataset], 
         transform= transform, outputFile = False)
 
-targetDataset = createDataset(opt.targetDataset,
-        transform= transform, outputFile = False)
+dataset =  CycleMcdDataset( supervisedA = supervisedADataset, unsupervisedA = unsupervisedADataset,
+                            supervisedB = supervisedBDataset, unsupervisedB = unsupervisedBDataset)
+
 
 dataLoader= torch.utils.data.DataLoader(
-    ConcatDataset(
-    source = sourceDataset,
-    target = targetDataset) ,
-    batch_size= opt.batchSize, shuffle=True)
+    dataset, batch_size= opt.batchSize, shuffle=True)
 
 # set visualizer
 
-visualizer = Visualizer(opt, dataLoader.dataset).reset()
+visualizer = TrainVisualizer(opt, dataLoader.dataset).reset()
 
 steps = 0
-for epoch in range(opt.epochStart, opt.nEpochStart + opt.nEpochDecay + 1):
+for epoch in range(opt.epoch, opt.nEpochStart + opt.nEpochDecay + 1):
     for i, data in enumerate(dataLoader):
         steps += 1
 
         model.set_input(data)
         model.optimize_parameters()
 
-        visualizer.print_process('Train', epoch, loss = model.current_losses())
+        visualizer('Train', epoch, data = model.current_losses())
 
         if steps % opt.displayInterval == 0:
             visualizer.displayImage(model.current_images(), steps)
-            visualizer.displayLoss(model.current_losses(), steps)
+            visualizer.displayScalor(model.current_losses(), steps)
 
 
         if steps % opt.saveLatestInterval == 0:
-            print('saving the latest model (epoch %d, total_steps %d)\n' % (epoch, steps))
+            print('\nsaving the latest model (epoch %d, total_steps %d)' % (epoch, steps))
             model.save_networks('latest')
 
 
     if epoch % opt.saveEpochInterval == 0:
-        print('saving the model at the end of epoch %d, iters %d\n' % (epoch, steps))
+        print('\nsaving the model at the end of epoch %d, iters %d' % (epoch, steps))
         model.save_networks('latest')
         model.save_networks(epoch)
 
-    visualizer.print('Train', epoch, miou = model.current_mious())
+    visualizer.end('Train', epoch, data = model.current_mious())
     # important
     print('='*80)
     if opt.adjustLr:

@@ -1,15 +1,13 @@
 
 import os
-import sys
 
-topDir = os.path.join(sys.argv[1],'image')
 tags = ['train', 'val', 'test']
 
 for tag in tags:
-    directory = os.path.join(topDir,tag)
+    directory = '../../Segmentation_dataset/GTA/image/{}'.format(tag)
     filePatern = '.png'
-    outputFile = os.path.join(topDir, '{}.txt'.format(tag))
-    outputFilter = '{}/'.format(topDir)
+    outputFile = '../../Segmentation_dataset/GTA/image/{}.txt'.format(tag)
+    outputFilter = '../../Segmentation_dataset/GTA/image/'
 
     path=[]
     for root, directories, filenames in os.walk(directory):

@@ -1,10 +1,11 @@
 
 import numbers, math, random
 
+import numpy as np
 import torch
 from torchvision.transforms import functional as F
 from torchvision import transforms
-from PIL import Image
+from PIL import Image, ImagePalette
 
 
 
@@ -235,6 +236,55 @@ class RandomHorizontalFlip(object):
     def __repr__(self):
         return self.__class__.__name__ + '(p={})'.format(self.p)
 
+class RandomCrop(object):
+    """Crop the given PIL Image at a random location.
+    Args:
+        size (sequence or int): Desired output size of the crop. If size is an
+            int instead of sequence like (h, w), a square crop (size, size) is
+            made.
+    """
+
+    def __init__(self, size):
+        if isinstance(size, numbers.Number):
+            self.size = (int(size), int(size))
+        else:
+            self.size = size
+
+    @staticmethod
+    def get_params(img, output_size):
+        """Get parameters for ``crop`` for a random crop.
+        Args:
+            img (PIL Image): Image to be cropped.
+            output_size (tuple): Expected output size of the crop.
+        Returns:
+            tuple: params (i, j, h, w) to be passed to ``crop`` for random crop.
+        """
+        w, h = img.size
+        th, tw = output_size
+        if w == tw and h == th:
+            return 0, 0, h, w
+
+        i = random.randint(0, h - th)
+        j = random.randint(0, w - tw)
+        return i, j, th, tw
+
+    def __call__(self, sample):
+        """
+        Args:
+            img (PIL Image): Image to be cropped.
+        Returns:
+            PIL Image: Cropped image.
+        """
+
+        i, j, h, w = self.get_params(sample['image'], self.size)
+
+        sample['image'] = F.crop(sample['image'], i, j, h, w)
+        sample['label'] = F.crop(sample['label'], i, j, h, w)
+        return sample
+
+    def __repr__(self):
+        return self.__class__.__name__ + '(size={0}, padding={1})'.format(self.size, self.padding)
+
 class LabelFilter(object):
     def __init__(self):
         self.map = torch.tensor([19, 19, 19, 19, 19, 19, 19, 0, 1, 19,
@@ -270,3 +320,70 @@ class Colorize(object):
     def __call__(self, label):
         return torch.index_select(self.map, 0, label.cpu().view(-1)).view(*label.size(),3)
 
+class Palette():
+    def __init__(self, palette):
+        palette = ImagePalette.ImagePalette(palette = palette.tobytes(), size = palette.size)
+        palette.rawmode = 'RGB'
+        self.palette = palette
+
+
+color20 = np.array([
+    [128,64,128],
+    [244,35,232],
+    [70,70,70],
+    [102,102,156],
+    [190,153,153],
+    [153,153,153],
+    [250,170,30],
+    [220,220,0],
+    [107,142,35],
+    [152,251,152],
+    [70,130,180],
+    [220,20,60],
+    [255,0,0],
+    [0,0,142],
+    [0,0,70],
+    [0,60,100],
+    [0,80,100],
+    [0,0,230],
+    [119,11,32],
+    [0,0,0]], dtype = np.uint8)
+color35 = np.array([
+    [  0,   0,   0],
+    [  0,   0,   0],
+    [  0,   0,   0],
+    [  0,   0,   0],
+    [  0,   0,   0],
+    [  0,   0,   0],
+    [  0,   0,   0],
+    [128,  64, 128],
+    [244,  35, 232],
+    [  0,   0,   0],
+    [  0,   0,   0],
+    [ 70,  70,  70],
+    [102, 102, 156],
+    [190, 153, 153],
+    [  0,   0,   0],
+    [  0,   0,   0],
+    [  0,   0,   0],
+    [153, 153, 153],
+    [  0,   0,   0],
+    [250, 170,  30],
+    [220, 220,   0],
+    [107, 142,  35],
+    [152, 251, 152],
+    [ 70, 130, 180],
+    [220,  20,  60],
+    [255,   0,   0],
+    [  0,   0, 142],
+    [  0,   0,  70],
+    [  0,  60, 100],
+    [  0,   0,   0],
+    [  0,   0,   0],
+    [  0,  80, 100],
+    [  0,   0, 230],
+    [119,  11,  32],
+    [  0,   0,   0]], dtype = np.uint8)
+
+palette20 = Palette(color20)
+palette35 = Palette(color35)

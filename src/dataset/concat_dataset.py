@@ -1,20 +1,21 @@
 
-import random
 from dataset.base_dataset import BaseDataset
 
 class ConcatDataset(BaseDataset):
-    def __init__(self, source, target):
-        assert( len(source) == len(target))
-        self.source = source
-        self.target = target
-
-    def __getitem__(self, i):
-        index = i % len(self.source)
-        return ( self.source[index][random.randint(0,len(self.source[index])-1)],
-            self.target[index][random.randint(0,len(self.target[index])-1)])
+    def __init__(self, dataset):
+        index = []
+        for datasetIndex, d in enumerate(dataset):
+            index.extend([[datasetIndex, i] for i in range(len(d))])
+        self.index = index
+        self.dataset = dataset
 
     def __len__(self):
-        return max(len(d) for d in self.source + self.target) * len(self.source)
+        return len(self.index)
 
+    def __getitem__(self, i):
+        _datasetIndex = self.index[i][0]
+        _index = self.index[i][1]
+        data = self.dataset[_datasetIndex][_index]
+        return data
     def name(self):
         return 'ConcatDataSet'

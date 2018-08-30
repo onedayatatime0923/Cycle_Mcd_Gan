@@ -1,14 +1,18 @@
-from .base_options import BaseOptions
+
+import sys
+sys.path.append('./')
+from options.base_options import BaseOptions
 
 
 class McdTrainOptions(BaseOptions):
     def __init__(self):
-        self.mode = "train"
+        super(McdTrainOptions, self).__init__()
     def initialize(self, parser):
         parser = BaseOptions.initialize(self, parser)
+        # ---------- Define Mode ---------- #
+        parser.set_defaults(mode= 'train')
         # ---------- Define Network ---------- #
-        parser.add_argument('--model', type=str, default="mcd", choices = ['mcd','cycle_mcd'],
-                            help="Method Name")
+        parser.set_defaults(model= 'mcd')
         parser.add_argument('--net', type=str, default="drn_d_38", help="network structure",
                             choices=['fcn', 'psp', 'segnet', 'fcnvgg',
                                      "drn_c_26", "drn_c_42", "drn_c_58", "drn_d_22",
@@ -22,14 +26,7 @@ class McdTrainOptions(BaseOptions):
                 choices=["gta_train", "gta_val", "city_train", "city_val"],
                 default = ["city_train"])
         # ---------- Optimizers ---------- #
-        parser.add_argument('--opt', type=str, default="sgd", choices=['sgd', 'adam'],
-                            help="network optimizer")
-        parser.add_argument("--adjustLr", action="store_true",
-                            help='whether you change lr')
-        parser.add_argument('--lr_policy', type=str, default='lambda',
-                            help='learning rate policy: lambda|step|plateau')
-        parser.add_argument('--lr_decay_iters', type=int, default=50,
-                            help='multiply by a gamma every lr_decay_iters iterations')
+        parser.set_defaults(opt= 'sgd')
         # ---------- Train Details ---------- #
         parser.add_argument('--k', type=int, default=4,
                             help='how many steps to repeat the generator update')
@@ -39,16 +36,12 @@ class McdTrainOptions(BaseOptions):
         parser.add_argument('--dLoss', type=str, default="diff",
                             choices=['mysymkl', 'symkl', 'diff'],
                             help="choose from ['mysymkl', 'symkl', 'diff']")
-        parser.add_argument('--epochStart', type=int, default=1, 
-                            help='the starting epoch count.')
-        parser.add_argument('--nEpochStart', type=int, default=10, 
-                            help='# of epoch at starting learning rate')
-        parser.add_argument('--nEpochDecay', type=int, default=10, 
-                            help='# of epoch to linearly decay learning rate to zero')
+        # ---------- Hyperparameters ---------- #
+        parser.set_defaults(epoch= 1)
+        parser.set_defaults(nEpochStart= 10)
+        parser.set_defaults(nEpochDecay= 10)
         # ---------- Experiment Setting ---------- #
-        parser.add_argument('--name', type=str, default='mcd_da', 
-                            help='name of the experiment. It decides where to store samples and models')
-        parser.add_argument('--displayWidth', type=int, default=3,
-                            help='frequency of showing training results on screen')
+        parser.set_defaults(name= 'mcd_da')
+        parser.set_defaults(displayWidth= 3)
 
         return parser

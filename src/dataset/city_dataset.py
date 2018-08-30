@@ -46,7 +46,7 @@ class CityDataSet(BaseDataset):
             images = self.transform(images)
 
         if self.outputFile:
-            return images, imageFile
+            return images, [imageFile,labelFile]
         else:
             return images
 
