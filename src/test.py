@@ -38,7 +38,7 @@ transformList = [
 transform = Compose(transformList)
 
 dataset = createDataset(opt.dataset,
-        transform= transform, outputFile = True)[0]
+        transform= transform, outputFile = True)
 
 dataLoader= torch.utils.data.DataLoader(
     dataset,

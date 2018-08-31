@@ -163,9 +163,6 @@ class BaseOptions():
         else:
             self.opt.device = torch.device('cpu')
 
-    def test(self):
-        pass
-
     def parse(self):
         # gather options
         self.gather_options()

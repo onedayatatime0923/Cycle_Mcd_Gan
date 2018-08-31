@@ -43,9 +43,9 @@ class BaseVisualizer():
                     name, epoch , self.totalSize, self.totalSize, 100.,
                     self.timer(1))
         for name in self.data:
-            message += '{:>10}: {:.4f}\n'.format(name, self.data[name]/ self.nStep)
+            message += '{:>20}: {:.4f}\n'.format(name, self.data[name]/ self.nStep)
         for name in data:
-            message += '{:>10}: {:.4f}\n'.format(name, data[name])
+            message += '{:>20}: {:.4f}\n'.format(name, data[name])
         print(message)
         self.reset()
     def displayScalor(self, data, step):
