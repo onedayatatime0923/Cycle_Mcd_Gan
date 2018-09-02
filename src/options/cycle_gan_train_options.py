@@ -18,7 +18,7 @@ class CycleGanTrainOptions(BaseOptions):
         parser.add_argument('--which_model_netG', type=str, default='resnet_9blocks', help='selects model to use for netG')
         parser.add_argument('--which_model_netD', type=str, default='basic', help='selects model to use for netD')
         parser.add_argument('--n_layers_D', type=int, default=3, help='only used if which_model_netD==n_layers')
-        parser.add_argument('--dropout', action='store_true', help='no dropout for the generator')
+        parser.add_argument('--dropout', action='store_false', help='no dropout for the generator')
         parser.add_argument('--norm', type=str, default='instance', help='instance normalization or batch normalization, default CycleGAN did not use dropout')
         parser.add_argument('--init_type', type=str, default='normal', help='network initialization [normal|xavier|kaiming|orthogonal]')
         parser.add_argument('--init_gain', type=float, default=0.02, help='scaling factor for normal, xavier and orthogonal.')
@@ -31,6 +31,7 @@ class CycleGanTrainOptions(BaseOptions):
                 default = "city_train")
         # ---------- Optimizers ---------- #
         parser.set_defaults(opt= 'adam')
+        parser.set_defaults(lr= 2E-4)
         parser.set_defaults(adjustLr= True)
         # ---------- Hyperparameters ---------- #
         parser.add_argument('--lsgan', action='store_false', help='do not use least square GAN, if specified, use vanilla GAN')

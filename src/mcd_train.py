@@ -62,7 +62,8 @@ dataLoader= torch.utils.data.DataLoader(
     SourceTargetDataset(
     source = sourceDataset,
     target = targetDataset) ,
-    batch_size= opt.batchSize, shuffle=True)
+    batch_size= opt.batchSize, shuffle=True,
+    num_workers=opt.nThreads)
 
 # set visualizer
 

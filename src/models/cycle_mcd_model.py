@@ -64,13 +64,13 @@ class CycleMcdModel(BaseModel):
         self.netGenA = networks.define_G(opt.inputCh, opt.inputCh, 
                 opt.ngf, opt.which_model_netG, opt.norm, opt.dropout, 
                 opt.init_type, opt.init_gain, opt.gpuIds)
-        self.netDisA = networks.define_D(opt.inputCh, opt.inputCh, opt.which_model_netD,
+        self.netDisA = networks.define_D(opt.inputCh, opt.ndf, opt.which_model_netD,
                 opt.n_layers_D, opt.norm, not opt.lsgan, opt.init_type, 
                 opt.init_gain, opt.gpuIds)
         self.netGenB = networks.define_G(opt.inputCh, opt.inputCh, 
                 opt.ngf, opt.which_model_netG, opt.norm, opt.dropout, 
                 opt.init_type, opt.init_gain, opt.gpuIds)
-        self.netDisB = networks.define_D(opt.inputCh, opt.inputCh, opt.which_model_netD,
+        self.netDisB = networks.define_D(opt.inputCh, opt.ndf, opt.which_model_netD,
                 opt.n_layers_D, opt.norm, not opt.lsgan, opt.init_type, 
                 opt.init_gain, opt.gpuIds)
 
