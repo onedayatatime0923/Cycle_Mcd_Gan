@@ -16,7 +16,7 @@ from utils import RandomRotation, RandomCrop, Resize, ToTensor, Normalize, Rando
 assert torch and Variable
 
 def plot_im(im):
-    im = (Denormalize()(im).permute(1,2,0).cpu().numpy() * 255).astype(np.uint8)
+    im = (invTransform(im).permute(1,2,0).cpu().numpy() * 255).astype(np.uint8)
     plt.imshow(im)
     plt.show()
 def plot_seg(im):
@@ -25,6 +25,7 @@ def plot_seg(im):
     plt.show()
 
 opt = McdTrainOptions().parse()
+invTransform = Denormalize(opt.normalizeMean, opt.normalizeNorm)
 
 # set model
 
@@ -40,14 +41,16 @@ if opt.augment:
         RandomCrop(opt.fineSize),
         RandomRotation(opt.rotate),
         ToTensor(),
-        Normalize([.485, .456, .406], [.229, .224, .225]),
+        Normalize(opt.normalizeMean,
+            opt.normalizeNorm),
         RandomHorizontalFlip(),
     ]
 else:
     transformList = [
         Resize(opt.loadSize),
         ToTensor(),
-        Normalize([.485, .456, .406], [.229, .224, .225])
+        Normalize(opt.normalizeMean,
+            opt.normalizeNorm)
     ]
 
 transform = Compose(transformList)
@@ -82,7 +85,6 @@ for epoch in range(opt.epoch, opt.nEpochStart + opt.nEpochDecay + 1):
         if steps % opt.displayInterval == 0:
             visualizer.displayImage(model.current_images(), steps)
             visualizer.displayScalor(model.current_losses(), steps)
-
 
         if steps % opt.saveLatestInterval == 0:
             print('\nsaving the latest model (epoch %d, total_steps %d)' % (epoch, steps))

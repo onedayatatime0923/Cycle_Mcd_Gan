@@ -75,6 +75,7 @@ class CycleGanModel(BaseModel):
         self.optimizers = []
         self.optimizers.append(self.optimizerG)
         self.optimizers.append(self.optimizerD)
+
         print('--------------------------------------------------')
     def name(self):
         return 'CycleGanModel'

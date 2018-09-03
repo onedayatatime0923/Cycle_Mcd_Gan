@@ -59,6 +59,12 @@ class BaseOptions():
         parser.add_argument('--rotate', type=int,
                             default=10,
                             help="angle")
+        parser.add_argument('--normalizeMean', type=float,
+                            default=(0.5, 0.5, 0.5), nargs=3, metavar=("R", "G", "B"),
+                            help="normalization mean: R G B")
+        parser.add_argument('--normalizeNorm', type=float,
+                            default=(0.5, 0.5, 0.5), nargs=3, metavar=("R", "G", "B"),
+                            help="normalization norm: R G B")
         # ---------- Input Image Setting ---------- #
         parser.add_argument("--inputCh", type=int, default=3,
                             choices=[1, 3, 4])

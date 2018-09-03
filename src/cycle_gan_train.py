@@ -16,7 +16,7 @@ from utils import RandomRotation, RandomCrop, Resize, ToTensor, Normalize, Rando
 assert torch and Variable
 
 def plot_im(im):
-    im = (Denormalize()(im).permute(1,2,0).cpu().numpy() * 255).astype(np.uint8)
+    im = (invTransform(im).permute(1,2,0).cpu().numpy() * 255).astype(np.uint8)
     plt.imshow(im)
     plt.show()
 def plot_seg(im):
@@ -25,6 +25,7 @@ def plot_seg(im):
     plt.show()
 
 opt = CycleGanTrainOptions().parse()
+invTransform = Denormalize(opt.normalizeMean, opt.normalizeNorm)
 
 # set model
 
@@ -39,14 +40,16 @@ if opt.augment:
         RandomCrop(opt.fineSize),
         RandomRotation(opt.rotate),
         ToTensor(),
-        Normalize([.485, .456, .406], [.229, .224, .225]),
+        Normalize(opt.normalizeMean,
+            opt.normalizeNorm),
         RandomHorizontalFlip(),
     ]
 else:
     transformList = [
         Resize(opt.loadSize),
         ToTensor(),
-        Normalize([.485, .456, .406], [.229, .224, .225])
+        Normalize(opt.normalizeMean,
+            opt.normalizeNorm)
     ]
 
 transform = Compose(transformList)
@@ -95,7 +98,6 @@ for epoch in range(opt.epoch, opt.nEpochStart + opt.nEpochDecay + 1):
         model.save_networks(epoch)
 
     visualizer.end('Train', epoch, data = model.current_mious())
-    # important
     print('='*80)
     if opt.adjustLr:
         model.update_learning_rate()

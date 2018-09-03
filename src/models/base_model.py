@@ -16,7 +16,7 @@ class BaseModel():
         self.miouNames = []
         self.imageNames = []
         self.modelNames = []
-        self.invTransform = Denormalize()
+        self.invTransform = Denormalize(opt.normalizeMean, opt.normalizeNorm)
 
     def name(self):
         return 'BaseModel'

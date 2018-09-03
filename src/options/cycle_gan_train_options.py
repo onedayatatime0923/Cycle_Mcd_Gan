@@ -18,7 +18,7 @@ class CycleGanTrainOptions(BaseOptions):
         parser.add_argument('--which_model_netG', type=str, default='resnet_9blocks', help='selects model to use for netG')
         parser.add_argument('--which_model_netD', type=str, default='basic', help='selects model to use for netD')
         parser.add_argument('--n_layers_D', type=int, default=3, help='only used if which_model_netD==n_layers')
-        parser.add_argument('--dropout', action='store_false', help='no dropout for the generator')
+        parser.add_argument('--dropout', action='store_true', help='do not use dropout for the generator, if specified, use dropout')
         parser.add_argument('--norm', type=str, default='instance', help='instance normalization or batch normalization, default CycleGAN did not use dropout')
         parser.add_argument('--init_type', type=str, default='normal', help='network initialization [normal|xavier|kaiming|orthogonal]')
         parser.add_argument('--init_gain', type=float, default=0.02, help='scaling factor for normal, xavier and orthogonal.')
@@ -37,7 +37,7 @@ class CycleGanTrainOptions(BaseOptions):
         parser.add_argument('--lsgan', action='store_false', help='do not use least square GAN, if specified, use vanilla GAN')
         parser.add_argument('--pool_size', type=int, default=50, help='the size of image buffer that stores previously generated images')
         parser.add_argument('--lambdaA', type=float, default=10.0,
-                            help='weight for cycle loss (A -> A -> A)')
+                            help='weight for cycle loss (A -> B -> A)')
         parser.add_argument('--lambdaB', type=float, default=10.0,
                                 help='weight for cycle loss (B -> A -> B)')
         parser.add_argument('--lambdaIdentity', type=float, default=0.5, help='use identity mapping. Setting lambda_identity other than 0 has an effect of scaling the weight of the identity mapping loss. For example, if the weight of the identity loss should be 10 times smaller than the weight of the reconstruction loss, please set lambda_identity = 0.1')
