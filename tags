@@ -1,0 +1,443 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AverageMeter	src/models/drn/dilated_fcn.py	/^class AverageMeter(object):$/;"	c
+BalanceLoss2d	src/utils/loss.py	/^class BalanceLoss2d(nn.Module):$/;"	c
+BaseDataset	src/dataset/base_dataset.py	/^class BaseDataset(data.Dataset):$/;"	c
+BaseModel	src/models/base_model.py	/^class BaseModel():$/;"	c
+BaseOptions	src/options/base_options.py	/^class BaseOptions():$/;"	c
+BaseVisualizer	src/visualizer/base_visualizer.py	/^class BaseVisualizer():$/;"	c
+BasicBlock	src/models/drn/drn.py	/^class BasicBlock(nn.Module):$/;"	c
+Bottleneck	src/models/drn/drn.py	/^class Bottleneck(nn.Module):$/;"	c
+CITYSCAPE_PALLETE	src/models/drn/dilated_fcn.py	/^CITYSCAPE_PALLETE = np.asarray([$/;"	v
+CityDataSet	src/dataset/city_dataset.py	/^class CityDataSet(BaseDataset):$/;"	c
+Colorize	src/utils/transform.py	/^class Colorize(object):$/;"	c
+ConcatDataset	src/dataset/concat_dataset.py	/^class ConcatDataset(BaseDataset):$/;"	c
+CrossEntropyLoss2d	src/utils/loss.py	/^class CrossEntropyLoss2d(nn.Module):$/;"	c
+CycleGanModel	src/models/cycle_gan_model.py	/^class CycleGanModel(BaseModel):$/;"	c
+CycleGanTrainOptions	src/options/cycle_gan_train_options.py	/^class CycleGanTrainOptions(BaseOptions):$/;"	c
+CycleMcdDataset	src/dataset/cycle_dataset.py	/^class CycleMcdDataset(BaseDataset):$/;"	c
+CycleMcdModel	src/models/cycle_mcd_model.py	/^class CycleMcdModel(BaseModel):$/;"	c
+CycleMcdTrainOptions	src/options/cycle_mcd_train_options.py	/^class CycleMcdTrainOptions(BaseOptions):$/;"	c
+DRN	src/models/drn/drn.py	/^class DRN(nn.Module):$/;"	c
+DRNSeg	src/models/drn/dilated_fcn.py	/^class DRNSeg(nn.Module):$/;"	c
+DRNSegBase	src/models/drn/dilated_fcn.py	/^class DRNSegBase(nn.Module):$/;"	c
+DRNSegPixelClassifier	src/models/drn/dilated_fcn.py	/^class DRNSegPixelClassifier(nn.Module):$/;"	c
+DRNSegPixelClassifier_ADR	src/models/drn/dilated_fcn.py	/^class DRNSegPixelClassifier_ADR(nn.Module):$/;"	c
+Denormalize	src/utils/transform.py	/^def Denormalize(mean=[.485, .456, .406], std=[.229, .224, .225]):$/;"	f
+Diff2d	src/utils/loss.py	/^class Diff2d(nn.Module):$/;"	c
+Distance	src/utils/loss.py	/^class Distance(nn.Module):$/;"	c
+DownConv	src/models/drn/dilated_fcn.py	/^class DownConv(nn.Module):$/;"	c
+Entropy	src/utils/loss.py	/^class Entropy(nn.Module):$/;"	c
+Evaluator	src/evaluator/evaluator.py	/^class Evaluator:$/;"	c
+GANLoss	src/models/cyclegan/networks.py	/^class GANLoss(nn.Module):$/;"	c
+GANLoss	src/utils/loss.py	/^class GANLoss(nn.Module):$/;"	c
+GTADataSet	src/dataset/gta_dataset.py	/^class GTADataSet(BaseDataset):$/;"	c
+GradReverse	src/models/drn/grad_reversal.py	/^class GradReverse(Function):$/;"	c
+ImagePool	src/utils/image_pool.py	/^class ImagePool():$/;"	c
+IouEval	src/utils/iou_eval.py	/^class IouEval:$/;"	c
+LabelFilter	src/utils/transform.py	/^class LabelFilter(object):$/;"	c
+MCDModel	src/models/mcd_model.py	/^class MCDModel(BaseModel):$/;"	c
+McdTrainOptions	src/options/mcd_train_options.py	/^class McdTrainOptions(BaseOptions):$/;"	c
+NLayerDiscriminator	src/models/cyclegan/networks.py	/^class NLayerDiscriminator(nn.Module):$/;"	c
+Normalize	src/utils/transform.py	/^class Normalize(object):$/;"	c
+Palette	src/utils/transform.py	/^class Palette():$/;"	c
+PixelDiscriminator	src/models/cyclegan/networks.py	/^class PixelDiscriminator(nn.Module):$/;"	c
+RandomCrop	src/utils/transform.py	/^class RandomCrop(object):$/;"	c
+RandomHorizontalFlip	src/utils/transform.py	/^class RandomHorizontalFlip(object):$/;"	c
+RandomResizedCrop	src/utils/transform.py	/^class RandomResizedCrop(object):$/;"	c
+RandomRotation	src/utils/transform.py	/^class RandomRotation(object):$/;"	c
+Resize	src/utils/transform.py	/^class Resize(object):$/;"	c
+ResnetBlock	src/models/cyclegan/networks.py	/^class ResnetBlock(nn.Module):$/;"	c
+ResnetGenerator	src/models/cyclegan/networks.py	/^class ResnetGenerator(nn.Module):$/;"	c
+SegList	src/models/drn/dilated_fcn.py	/^class SegList(torch.utils.data.Dataset):$/;"	c
+SourceTargetDataset	src/dataset/source_target_dataset.py	/^class SourceTargetDataset(BaseDataset):$/;"	c
+Symkl2d	src/utils/loss.py	/^class Symkl2d(nn.Module):$/;"	c
+TestModel	src/models/test_model.py	/^class TestModel(BaseModel):$/;"	c
+TestOptions	src/options/test_options.py	/^class TestOptions(BaseOptions):$/;"	c
+TestVisualizer	src/visualizer/test_visualizer.py	/^class TestVisualizer(BaseVisualizer):$/;"	c
+Timer	src/utils/timer.py	/^class Timer():$/;"	c
+ToTensor	src/utils/transform.py	/^class ToTensor(object):$/;"	c
+TrainVisualizer	src/visualizer/train_visualizer.py	/^class TrainVisualizer(BaseVisualizer):$/;"	c
+UnetGenerator	src/models/cyclegan/networks.py	/^class UnetGenerator(nn.Module):$/;"	c
+UnetSkipConnectionBlock	src/models/cyclegan/networks.py	/^class UnetSkipConnectionBlock(nn.Module):$/;"	c
+__all__	src/models/drn/drn.py	/^__all__ = ['DRN', 'drn26', 'drn42', 'drn58']$/;"	v
+__call__	src/evaluator/evaluator.py	/^    def __call__(self, path, predImage):$/;"	m	class:Evaluator	file:
+__call__	src/models/cyclegan/networks.py	/^    def __call__(self, input, target_is_real):$/;"	m	class:GANLoss	file:
+__call__	src/utils/loss.py	/^    def __call__(self, input, target_is_real):$/;"	m	class:GANLoss	file:
+__call__	src/utils/timer.py	/^    def __call__(self, percent):$/;"	m	class:Timer	file:
+__call__	src/utils/transform.py	/^    def __call__(self, label):$/;"	m	class:Colorize	file:
+__call__	src/utils/transform.py	/^    def __call__(self, label):$/;"	m	class:LabelFilter	file:
+__call__	src/utils/transform.py	/^    def __call__(self, sample):$/;"	m	class:Normalize	file:
+__call__	src/utils/transform.py	/^    def __call__(self, sample):$/;"	m	class:RandomCrop	file:
+__call__	src/utils/transform.py	/^    def __call__(self, sample):$/;"	m	class:RandomHorizontalFlip	file:
+__call__	src/utils/transform.py	/^    def __call__(self, sample):$/;"	m	class:RandomResizedCrop	file:
+__call__	src/utils/transform.py	/^    def __call__(self, sample):$/;"	m	class:RandomRotation	file:
+__call__	src/utils/transform.py	/^    def __call__(self, sample):$/;"	m	class:Resize	file:
+__call__	src/utils/transform.py	/^    def __call__(self, sample):$/;"	m	class:ToTensor	file:
+__call__	src/visualizer/base_visualizer.py	/^    def __call__(self, name, epoch, data= []):$/;"	m	class:BaseVisualizer	file:
+__call__	src/visualizer/test_visualizer.py	/^    def __call__(self, name, epoch, data= []):$/;"	m	class:TestVisualizer	file:
+__call__	src/visualizer/train_visualizer.py	/^    def __call__(self, name, epoch, data= []):$/;"	m	class:TrainVisualizer	file:
+__getitem__	src/dataset/city_dataset.py	/^    def __getitem__(self, index):$/;"	m	class:CityDataSet	file:
+__getitem__	src/dataset/concat_dataset.py	/^    def __getitem__(self, i):$/;"	m	class:ConcatDataset	file:
+__getitem__	src/dataset/cycle_dataset.py	/^    def __getitem__(self, i):$/;"	m	class:CycleMcdDataset	file:
+__getitem__	src/dataset/gta_dataset.py	/^    def __getitem__(self, index):$/;"	m	class:GTADataSet	file:
+__getitem__	src/dataset/source_target_dataset.py	/^    def __getitem__(self, i):$/;"	m	class:SourceTargetDataset	file:
+__getitem__	src/models/drn/dilated_fcn.py	/^    def __getitem__(self, index):$/;"	m	class:SegList	file:
+__init__	src/dataset/base_dataset.py	/^    def __init__(self, opt):$/;"	m	class:BaseDataset
+__init__	src/dataset/city_dataset.py	/^    def __init__(self, root, split="train", transform=None, outputFile=True):$/;"	m	class:CityDataSet
+__init__	src/dataset/concat_dataset.py	/^    def __init__(self, dataset):$/;"	m	class:ConcatDataset
+__init__	src/dataset/cycle_dataset.py	/^    def __init__(self, supervisedA, supervisedB, unsupervisedA, unsupervisedB):$/;"	m	class:CycleMcdDataset
+__init__	src/dataset/gta_dataset.py	/^    def __init__(self, root, split="train", transform=None, outputFile=True):$/;"	m	class:GTADataSet
+__init__	src/dataset/source_target_dataset.py	/^    def __init__(self, source, target):$/;"	m	class:SourceTargetDataset
+__init__	src/evaluator/evaluator.py	/^    def __init__(self, opt):$/;"	m	class:Evaluator
+__init__	src/models/base_model.py	/^    def __init__(self, opt):$/;"	m	class:BaseModel
+__init__	src/models/cycle_gan_model.py	/^    def __init__(self, opt ):$/;"	m	class:CycleGanModel
+__init__	src/models/cycle_mcd_model.py	/^    def __init__(self, opt ):$/;"	m	class:CycleMcdModel
+__init__	src/models/cyclegan/networks.py	/^    def __init__(self, dim, padding_type, norm_layer, use_dropout, use_bias):$/;"	m	class:ResnetBlock
+__init__	src/models/cyclegan/networks.py	/^    def __init__(self, input_nc, ndf=64, n_layers=3, norm_layer=nn.BatchNorm2d, use_sigmoid=False):$/;"	m	class:NLayerDiscriminator
+__init__	src/models/cyclegan/networks.py	/^    def __init__(self, input_nc, ndf=64, norm_layer=nn.BatchNorm2d, use_sigmoid=False):$/;"	m	class:PixelDiscriminator
+__init__	src/models/cyclegan/networks.py	/^    def __init__(self, input_nc, output_nc, ngf=64, norm_layer=nn.BatchNorm2d, use_dropout=False, n_blocks=6, padding_type='reflect'):$/;"	m	class:ResnetGenerator
+__init__	src/models/cyclegan/networks.py	/^    def __init__(self, input_nc, output_nc, num_downs, ngf=64,$/;"	m	class:UnetGenerator
+__init__	src/models/cyclegan/networks.py	/^    def __init__(self, outer_nc, inner_nc, input_nc=None,$/;"	m	class:UnetSkipConnectionBlock
+__init__	src/models/cyclegan/networks.py	/^    def __init__(self, use_lsgan=True, target_real_label=1.0, target_fake_label=0.0):$/;"	m	class:GANLoss
+__init__	src/models/drn/dilated_fcn.py	/^    def __init__(self):$/;"	m	class:AverageMeter
+__init__	src/models/drn/dilated_fcn.py	/^    def __init__(self, data_dir, phase, transforms, list_dir=None,$/;"	m	class:SegList
+__init__	src/models/drn/dilated_fcn.py	/^    def __init__(self, in_channels, out_channels, pooling=True):$/;"	m	class:DownConv
+__init__	src/models/drn/dilated_fcn.py	/^    def __init__(self, model_name, n_class, input_ch=3, pretrained_model=None,$/;"	m	class:DRNSeg
+__init__	src/models/drn/dilated_fcn.py	/^    def __init__(self, model_name, n_class, pretrained_model=None, pretrained=True, input_ch=3):$/;"	m	class:DRNSegBase
+__init__	src/models/drn/dilated_fcn.py	/^    def __init__(self, n_class, use_torch_up=False, dropout=False):$/;"	m	class:DRNSegPixelClassifier
+__init__	src/models/drn/dilated_fcn.py	/^    def __init__(self, n_class, use_torch_up=False, input_ch=3):$/;"	m	class:DRNSegPixelClassifier_ADR
+__init__	src/models/drn/drn.py	/^    def __init__(self, block, layers, num_classes=1000,$/;"	m	class:DRN
+__init__	src/models/drn/drn.py	/^    def __init__(self, inplanes, planes, stride=1, downsample=None,$/;"	m	class:BasicBlock
+__init__	src/models/drn/drn.py	/^    def __init__(self, inplanes, planes, stride=1, downsample=None,$/;"	m	class:Bottleneck
+__init__	src/models/drn/grad_reversal.py	/^    def __init__(self, lambd):$/;"	m	class:GradReverse
+__init__	src/models/mcd_model.py	/^    def __init__(self, opt):$/;"	m	class:MCDModel
+__init__	src/models/test_model.py	/^    def __init__(self, opt):$/;"	m	class:TestModel
+__init__	src/options/base_options.py	/^    def __init__(self):$/;"	m	class:BaseOptions
+__init__	src/options/cycle_gan_train_options.py	/^    def __init__(self):$/;"	m	class:CycleGanTrainOptions
+__init__	src/options/cycle_mcd_train_options.py	/^    def __init__(self):$/;"	m	class:CycleMcdTrainOptions
+__init__	src/options/mcd_train_options.py	/^    def __init__(self):$/;"	m	class:McdTrainOptions
+__init__	src/options/test_options.py	/^    def __init__(self):$/;"	m	class:TestOptions
+__init__	src/utils/image_pool.py	/^    def __init__(self, pool_size):$/;"	m	class:ImagePool
+__init__	src/utils/iou_eval.py	/^    def __init__(self, nClass, ignoreEnd = True):$/;"	m	class:IouEval
+__init__	src/utils/loss.py	/^    def __init__(self, opt, size_average=False):$/;"	m	class:Distance
+__init__	src/utils/loss.py	/^    def __init__(self, opt, size_average=True):$/;"	m	class:CrossEntropyLoss2d
+__init__	src/utils/loss.py	/^    def __init__(self, use_lsgan=True, target_real_label=1.0, target_fake_label=0.0):$/;"	m	class:GANLoss
+__init__	src/utils/loss.py	/^    def __init__(self, weight=None, n_target_ch=21, size_average=True):$/;"	m	class:Symkl2d
+__init__	src/utils/loss.py	/^    def __init__(self, weight=None, size_average=True):$/;"	m	class:BalanceLoss2d
+__init__	src/utils/loss.py	/^    def __init__(self, weight=None, size_average=True):$/;"	m	class:Diff2d
+__init__	src/utils/loss.py	/^    def __init__(self, weight=None, size_average=True):$/;"	m	class:Entropy
+__init__	src/utils/timer.py	/^    def __init__(self):$/;"	m	class:Timer
+__init__	src/utils/transform.py	/^    def __init__(self):$/;"	m	class:Colorize
+__init__	src/utils/transform.py	/^    def __init__(self):$/;"	m	class:LabelFilter
+__init__	src/utils/transform.py	/^    def __init__(self):$/;"	m	class:ToTensor
+__init__	src/utils/transform.py	/^    def __init__(self, degrees, center=None):$/;"	m	class:RandomRotation
+__init__	src/utils/transform.py	/^    def __init__(self, mean, std):$/;"	m	class:Normalize
+__init__	src/utils/transform.py	/^    def __init__(self, p=0.5):$/;"	m	class:RandomHorizontalFlip
+__init__	src/utils/transform.py	/^    def __init__(self, palette):$/;"	m	class:Palette
+__init__	src/utils/transform.py	/^    def __init__(self, scale=(0.08, 1.0), ratio=(3. \/ 4., 4. \/ 3.)):$/;"	m	class:RandomResizedCrop
+__init__	src/utils/transform.py	/^    def __init__(self, size):$/;"	m	class:RandomCrop
+__init__	src/utils/transform.py	/^    def __init__(self, size):$/;"	m	class:Resize
+__init__	src/visualizer/base_visualizer.py	/^    def __init__(self, stepSize, totalSize, logPath = None, displayWidth=1):$/;"	m	class:BaseVisualizer
+__init__	src/visualizer/test_visualizer.py	/^    def __init__(self, opt, dataset):$/;"	m	class:TestVisualizer
+__init__	src/visualizer/train_visualizer.py	/^    def __init__(self, opt, dataset):$/;"	m	class:TrainVisualizer
+__len__	src/dataset/base_dataset.py	/^    def __len__(self):$/;"	m	class:BaseDataset	file:
+__len__	src/dataset/city_dataset.py	/^    def __len__(self):$/;"	m	class:CityDataSet	file:
+__len__	src/dataset/concat_dataset.py	/^    def __len__(self):$/;"	m	class:ConcatDataset	file:
+__len__	src/dataset/cycle_dataset.py	/^    def __len__(self):$/;"	m	class:CycleMcdDataset	file:
+__len__	src/dataset/gta_dataset.py	/^    def __len__(self):$/;"	m	class:GTADataSet	file:
+__len__	src/dataset/source_target_dataset.py	/^    def __len__(self):$/;"	m	class:SourceTargetDataset	file:
+__len__	src/models/drn/dilated_fcn.py	/^    def __len__(self):$/;"	m	class:SegList	file:
+__repr__	src/utils/transform.py	/^    def __repr__(self):$/;"	m	class:Normalize	file:
+__repr__	src/utils/transform.py	/^    def __repr__(self):$/;"	m	class:RandomCrop	file:
+__repr__	src/utils/transform.py	/^    def __repr__(self):$/;"	m	class:RandomHorizontalFlip	file:
+__repr__	src/utils/transform.py	/^    def __repr__(self):$/;"	m	class:RandomResizedCrop	file:
+__repr__	src/utils/transform.py	/^    def __repr__(self):$/;"	m	class:RandomRotation	file:
+__repr__	src/utils/transform.py	/^    def __repr__(self):$/;"	m	class:Resize	file:
+__repr__	src/utils/transform.py	/^    def __repr__(self):$/;"	m	class:ToTensor	file:
+_make_conv_layers	src/models/drn/drn.py	/^    def _make_conv_layers(self, channels, convs, stride=1, dilation=1):$/;"	m	class:DRN
+_make_layer	src/models/drn/drn.py	/^    def _make_layer(self, block, planes, blocks, stride=1, dilation=1,$/;"	m	class:DRN
+accuracy	src/models/drn/dilated_fcn.py	/^def accuracy(output, target):$/;"	f
+adjust_learning_rate	src/models/drn/dilated_fcn.py	/^def adjust_learning_rate(args, optimizer, epoch):$/;"	f
+asMinutes	src/utils/timer.py	/^    def asMinutes(self, s):$/;"	m	class:Timer
+backward	src/models/drn/grad_reversal.py	/^    def backward(self, grad_output):$/;"	m	class:GradReverse
+backward_dis_A	src/models/cycle_gan_model.py	/^    def backward_dis_A(self):$/;"	m	class:CycleGanModel
+backward_dis_A	src/models/cycle_mcd_model.py	/^    def backward_dis_A(self):$/;"	m	class:CycleMcdModel
+backward_dis_B	src/models/cycle_gan_model.py	/^    def backward_dis_B(self):$/;"	m	class:CycleGanModel
+backward_dis_B	src/models/cycle_mcd_model.py	/^    def backward_dis_B(self):$/;"	m	class:CycleMcdModel
+backward_dis_basic	src/models/cycle_gan_model.py	/^    def backward_dis_basic(self, netDis, real, fake):$/;"	m	class:CycleGanModel
+backward_dis_basic	src/models/cycle_mcd_model.py	/^    def backward_dis_basic(self, netDis, real, fake):$/;"	m	class:CycleMcdModel
+backward_gen	src/models/cycle_gan_model.py	/^    def backward_gen(self, retain_graph = False):$/;"	m	class:CycleGanModel
+backward_gen	src/models/cycle_mcd_model.py	/^    def backward_gen(self, retain_graph = False):$/;"	m	class:CycleMcdModel
+backward_source	src/models/mcd_model.py	/^    def backward_source(self, retain_graph = False):$/;"	m	class:MCDModel
+backward_supervised	src/models/cycle_mcd_model.py	/^    def backward_supervised(self, retain_graph = False):$/;"	m	class:CycleMcdModel
+backward_target_classifier	src/models/mcd_model.py	/^    def backward_target_classifier(self, retain_graph = False):$/;"	m	class:MCDModel
+backward_target_feature	src/models/mcd_model.py	/^    def backward_target_feature(self, retain_graph = False):$/;"	m	class:MCDModel
+backward_unsupervised_classifier	src/models/cycle_mcd_model.py	/^    def backward_unsupervised_classifier(self, retain_graph = False):$/;"	m	class:CycleMcdModel
+backward_unsupervised_feature	src/models/cycle_mcd_model.py	/^    def backward_unsupervised_feature(self, retain_graph = False):$/;"	m	class:CycleMcdModel
+build_conv_block	src/models/cyclegan/networks.py	/^    def build_conv_block(self, dim, padding_type, norm_layer, use_dropout, use_bias):$/;"	m	class:ResnetBlock
+c	src/utils/iou_eval.py	/^    c = 20$/;"	v	class:IouEval
+color	src/datamanager/labels_gtav_to_20classes.py	/^    color = np.array(list(key), dtype=np.int16)$/;"	v
+color20	src/utils/transform.py	/^color20 = np.array([$/;"	v
+color35	src/utils/transform.py	/^color35 = np.array([$/;"	v
+compute_hist	src/utils/iou_eval.py	/^    def compute_hist(self, pred, gnd):$/;"	m	class:IouEval
+concate_from_A	src/models/cycle_mcd_model.py	/^    def concate_from_A(self, A):$/;"	m	class:CycleMcdModel
+concate_from_B	src/models/cycle_mcd_model.py	/^    def concate_from_B(self, B):$/;"	m	class:CycleMcdModel
+construct_checkpoint	src/options/base_options.py	/^    def construct_checkpoint(self,creatDir = True):$/;"	m	class:BaseOptions
+construct_device	src/options/base_options.py	/^    def construct_device(self):$/;"	m	class:BaseOptions
+construct_message	src/options/base_options.py	/^    def construct_message(self):$/;"	m	class:BaseOptions
+construct_outputPath	src/options/base_options.py	/^    def construct_outputPath(self,creatDir = True):$/;"	m	class:BaseOptions
+conv3x3	src/models/drn/dilated_fcn.py	/^def conv3x3(in_channels, out_channels, stride=1,$/;"	f
+conv3x3	src/models/drn/drn.py	/^def conv3x3(in_planes, out_planes, stride=1, padding=1, dilation=1):$/;"	f
+createDataset	src/dataset/__init__.py	/^def createDataset(datasetList, transform, outputFile):$/;"	f
+createModel	src/models/__init__.py	/^def createModel(opt):$/;"	f
+createScheduler	src/models/base_model.py	/^def createScheduler(optimizer, opt):$/;"	f
+current_images	src/models/base_model.py	/^    def current_images(self):$/;"	m	class:BaseModel
+current_images	src/models/cycle_mcd_model.py	/^    def current_images(self):$/;"	m	class:CycleMcdModel
+current_images	src/models/mcd_model.py	/^    def current_images(self):$/;"	m	class:MCDModel
+current_images	src/models/test_model.py	/^    def current_images(self):$/;"	m	class:TestModel
+current_losses	src/models/base_model.py	/^    def current_losses(self):$/;"	m	class:BaseModel
+current_mious	src/models/base_model.py	/^    def current_mious(self):$/;"	m	class:BaseModel
+data	src/test.py	/^    data = {'Accu': accu, 'mIOU': miou}$/;"	v
+dataLoader	src/cycle_gan_train.py	/^dataLoader= torch.utils.data.DataLoader($/;"	v
+dataLoader	src/cycle_mcd_train.py	/^dataLoader= torch.utils.data.DataLoader($/;"	v
+dataLoader	src/mcd_train.py	/^dataLoader= torch.utils.data.DataLoader($/;"	v
+dataLoader	src/test.py	/^dataLoader= torch.utils.data.DataLoader($/;"	v
+dataset	src/cycle_gan_train.py	/^dataset = SourceTargetDataset($/;"	v
+dataset	src/cycle_mcd_train.py	/^dataset =  CycleMcdDataset( supervisedA = supervisedADataset, unsupervisedA = unsupervisedADataset,$/;"	v
+dataset	src/test.py	/^dataset = createDataset(opt.dataset,$/;"	v
+datasetA	src/cycle_gan_train.py	/^datasetA = createDataset([opt.datasetA],$/;"	v
+datasetB	src/cycle_gan_train.py	/^datasetB = createDataset([opt.datasetB],$/;"	v
+define_D	src/models/cyclegan/networks.py	/^def define_D(input_nc, ndf, which_model_netD,$/;"	f
+define_G	src/models/cyclegan/networks.py	/^def define_G(input_nc, output_nc, ngf, which_model_netG, norm='batch', use_dropout=False, init_type='normal', init_gain=0.02, gpu_ids=[]):$/;"	f
+description	src/evaluate.py	/^        description='PyTorch Segmentation Adaptation')$/;"	v
+directory	src/datamanager/generate_txt.py	/^    directory = '..\/..\/Segmentation_dataset\/GTA\/image\/{}'.format(tag)$/;"	v
+directory	src/datamanager/split_gta.py	/^directory = '..\/..\/Segmentation_dataset\/GTA\/image'$/;"	v
+displayImage	src/visualizer/base_visualizer.py	/^    def displayImage(self, data, step, name = 'Image'):$/;"	m	class:BaseVisualizer
+displayScalor	src/visualizer/base_visualizer.py	/^    def displayScalor(self, data, step):$/;"	m	class:BaseVisualizer
+drn_c_26	src/models/drn/drn.py	/^def drn_c_26(pretrained=False, input_ch=3, **kwargs):$/;"	f
+drn_c_42	src/models/drn/drn.py	/^def drn_c_42(pretrained=False, input_ch=3, **kwargs):$/;"	f
+drn_c_58	src/models/drn/drn.py	/^def drn_c_58(pretrained=False, input_ch=3, **kwargs):$/;"	f
+drn_d_105	src/models/drn/drn.py	/^def drn_d_105(pretrained=False, input_ch=3, **kwargs):$/;"	f
+drn_d_22	src/models/drn/drn.py	/^def drn_d_22(pretrained=False, input_ch=3, **kwargs):$/;"	f
+drn_d_38	src/models/drn/drn.py	/^def drn_d_38(pretrained=False, input_ch=3, **kwargs):$/;"	f
+drn_d_54	src/models/drn/drn.py	/^def drn_d_54(pretrained=False, input_ch=3, **kwargs):$/;"	f
+end	src/visualizer/base_visualizer.py	/^    def end(self, name, epoch, data): $/;"	m	class:BaseVisualizer
+end	src/visualizer/test_visualizer.py	/^    def end(self, name, epoch, data): $/;"	m	class:TestVisualizer
+end	src/visualizer/train_visualizer.py	/^    def end(self, name, epoch, data): $/;"	m	class:TrainVisualizer
+eval	src/models/base_model.py	/^    def eval(self):$/;"	m	class:BaseModel
+evaluator	src/test.py	/^evaluator = Evaluator(opt)$/;"	v
+expansion	src/models/drn/drn.py	/^    expansion = 1$/;"	v	class:BasicBlock
+expansion	src/models/drn/drn.py	/^    expansion = 4$/;"	v	class:Bottleneck
+filePatern	src/datamanager/generate_txt.py	/^    filePatern = '.png'$/;"	v
+files	src/evaluate.py	/^files = os.listdir(opt.imageDir)$/;"	v
+fill_up_weights	src/models/drn/dilated_fcn.py	/^def fill_up_weights(up):$/;"	f
+forward	src/models/base_model.py	/^    def forward(self):$/;"	m	class:BaseModel
+forward	src/models/cycle_gan_model.py	/^    def forward(self):$/;"	m	class:CycleGanModel
+forward	src/models/cycle_mcd_model.py	/^    def forward(self):$/;"	m	class:CycleMcdModel
+forward	src/models/cyclegan/networks.py	/^    def forward(self, input):$/;"	m	class:NLayerDiscriminator
+forward	src/models/cyclegan/networks.py	/^    def forward(self, input):$/;"	m	class:PixelDiscriminator
+forward	src/models/cyclegan/networks.py	/^    def forward(self, input):$/;"	m	class:ResnetGenerator
+forward	src/models/cyclegan/networks.py	/^    def forward(self, input):$/;"	m	class:UnetGenerator
+forward	src/models/cyclegan/networks.py	/^    def forward(self, x):$/;"	m	class:ResnetBlock
+forward	src/models/cyclegan/networks.py	/^    def forward(self, x):$/;"	m	class:UnetSkipConnectionBlock
+forward	src/models/drn/dilated_fcn.py	/^    def forward(self, x):$/;"	m	class:DRNSeg
+forward	src/models/drn/dilated_fcn.py	/^    def forward(self, x):$/;"	m	class:DRNSegBase
+forward	src/models/drn/dilated_fcn.py	/^    def forward(self, x):$/;"	m	class:DRNSegPixelClassifier_ADR
+forward	src/models/drn/dilated_fcn.py	/^    def forward(self, x):$/;"	m	class:DownConv
+forward	src/models/drn/dilated_fcn.py	/^    def forward(self, x, reverse=False):$/;"	m	class:DRNSegPixelClassifier
+forward	src/models/drn/drn.py	/^    def forward(self, x):$/;"	m	class:BasicBlock
+forward	src/models/drn/drn.py	/^    def forward(self, x):$/;"	m	class:Bottleneck
+forward	src/models/drn/drn.py	/^    def forward(self, x):$/;"	m	class:DRN
+forward	src/models/drn/grad_reversal.py	/^    def forward(self, x):$/;"	m	class:GradReverse
+forward	src/models/test_model.py	/^    def forward(self):$/;"	m	class:TestModel
+forward	src/utils/loss.py	/^    def forward(self, inputs, targets):$/;"	m	class:CrossEntropyLoss2d
+forward	src/utils/loss.py	/^    def forward(self, inputs, targets):$/;"	m	class:Distance
+forward	src/utils/loss.py	/^    def forward(self, inputs1):$/;"	m	class:Entropy
+forward	src/utils/loss.py	/^    def forward(self, inputs1, inputs2):$/;"	m	class:BalanceLoss2d
+forward	src/utils/loss.py	/^    def forward(self, inputs1, inputs2):$/;"	m	class:Diff2d
+forward	src/utils/loss.py	/^    def forward(self, inputs1, inputs2):$/;"	m	class:Symkl2d
+forward_mcd	src/models/cycle_mcd_model.py	/^    def forward_mcd(self, data):$/;"	m	class:CycleMcdModel
+gather_options	src/options/base_options.py	/^    def gather_options(self):$/;"	m	class:BaseOptions
+getDataset	src/dataset/__init__.py	/^def getDataset(datasetName, split, transform, outputFile):$/;"	f
+getOptimizer	src/models/base_model.py	/^def getOptimizer(model_parameters, opt, lr, beta1= None, momentum= None, weight_decay= None):$/;"	f
+get_norm_layer	src/models/cyclegan/networks.py	/^def get_norm_layer(norm_type='instance'):$/;"	f
+get_params	src/utils/transform.py	/^    def get_params(degrees):$/;"	m	class:RandomRotation
+get_params	src/utils/transform.py	/^    def get_params(img, output_size):$/;"	m	class:RandomCrop
+get_params	src/utils/transform.py	/^    def get_params(img, scale, ratio):$/;"	m	class:RandomResizedCrop
+get_scheduler	src/models/cyclegan/networks.py	/^def get_scheduler(optimizer, opt):$/;"	f
+get_target_tensor	src/models/cyclegan/networks.py	/^    def get_target_tensor(self, input, target_is_real):$/;"	m	class:GANLoss
+get_target_tensor	src/utils/loss.py	/^    def get_target_tensor(self, input, target_is_real):$/;"	m	class:GANLoss
+gndFile	src/evaluate.py	/^        gndFile = f.replace('pred','gnd')$/;"	v
+gndTensor	src/evaluate.py	/^        gndTensor = labelFilter(gndTensor)$/;"	v
+gndTensor	src/evaluate.py	/^        gndTensor = torch.LongTensor(np.array(Image.open(os.path.join(opt.imageDir,gndFile))))$/;"	v
+grad_reverse	src/models/drn/grad_reversal.py	/^def grad_reverse(x,lambd=1.0):$/;"	f
+i	src/datamanager/split_gta.py	/^i = 0$/;"	v
+import_class_by_name	src/models/__init__.py	/^def import_class_by_name(modelName, className, classType = BaseModel):$/;"	f
+in_dir	src/datamanager/labels_cityscrapes_to_20classes.py	/^in_dir = '..\/..\/..\/..\/Downloads\/gtFine_trainvaltest\/gtFine\/train'$/;"	v
+in_dir	src/datamanager/labels_gtav_to_20classes.py	/^in_dir = 'labels'$/;"	v
+in_img	src/datamanager/labels_cityscrapes_to_20classes.py	/^  in_img = imread(in_path)$/;"	v
+in_img	src/datamanager/labels_gtav_to_20classes.py	/^  in_img = cv2.imread(in_path)$/;"	v
+in_img	src/datamanager/labels_gtav_to_20classes.py	/^  in_img = in_img[:,:,::-1]$/;"	v
+in_paths	src/datamanager/labels_cityscrapes_to_20classes.py	/^in_paths = []$/;"	v
+in_paths	src/datamanager/labels_gtav_to_20classes.py	/^in_paths = sorted(glob(op.join(in_dir, '*.png')))$/;"	v
+in_pattern	src/datamanager/labels_cityscrapes_to_20classes.py	/^in_pattern = 'gtFine_labelIds.png'$/;"	v
+initNet	src/models/base_model.py	/^    def initNet(self, net):$/;"	m	class:BaseModel
+init_func	src/models/cyclegan/networks.py	/^    def init_func(m):$/;"	f	function:init_weights
+init_net	src/models/cyclegan/networks.py	/^def init_net(net, init_type='normal', init_gain=0.02, gpu_ids=[]):$/;"	f
+init_weights	src/models/cyclegan/networks.py	/^def init_weights(net, init_type='normal', gain=0.02):$/;"	f
+initialize	src/options/base_options.py	/^    def initialize(self, parser):$/;"	m	class:BaseOptions
+initialize	src/options/cycle_gan_train_options.py	/^    def initialize(self, parser):$/;"	m	class:CycleGanTrainOptions
+initialize	src/options/cycle_mcd_train_options.py	/^    def initialize(self, parser):$/;"	m	class:CycleMcdTrainOptions
+initialize	src/options/mcd_train_options.py	/^    def initialize(self, parser):$/;"	m	class:McdTrainOptions
+initialize	src/options/test_options.py	/^    def initialize(self, parser):$/;"	m	class:TestOptions
+invTransform	src/cycle_gan_train.py	/^invTransform = Denormalize(opt.normalizeMean, opt.normalizeNorm)$/;"	v
+invTransform	src/cycle_mcd_train.py	/^invTransform = Denormalize(opt.normalizeMean, opt.normalizeNorm)$/;"	v
+invTransform	src/mcd_train.py	/^invTransform = Denormalize(opt.normalizeMean, opt.normalizeNorm)$/;"	v
+iouEval	src/evaluate.py	/^iouEval = IouEval(opt.nClass, ignoreEnd = True)$/;"	v
+labelFilter	src/evaluate.py	/^labelFilter = LabelFilter()$/;"	v
+labels	src/datamanager/labels_cityscrapes_to_20classes.py	/^labels = [$/;"	v
+lambda_rule	src/models/base_model.py	/^        def lambda_rule(epoch):$/;"	f	function:createScheduler
+lambda_rule	src/models/cyclegan/networks.py	/^        def lambda_rule(epoch):$/;"	f	function:get_scheduler
+length	src/utils/iou_eval.py	/^    length = 100$/;"	v	class:IouEval
+load_networks	src/models/base_model.py	/^    def load_networks(self, nEpoch):$/;"	m	class:BaseModel
+load_options	src/options/base_options.py	/^    def load_options(self, path):$/;"	m	class:BaseOptions
+load_pretrained	src/models/base_model.py	/^    def load_pretrained(self):$/;"	m	class:BaseModel
+main	src/models/drn/dilated_fcn.py	/^def main():$/;"	f
+map_color_to_20classes	src/datamanager/labels_gtav_to_20classes.py	/^map_color_to_20classes = {$/;"	v
+mask	src/datamanager/labels_gtav_to_20classes.py	/^    mask = cv2.inRange(in_img, color, color)$/;"	v
+metric	src/utils/iou_eval.py	/^    def metric(self):$/;"	m	class:IouEval
+model	src/cycle_gan_train.py	/^model = createModel(opt)$/;"	v
+model	src/cycle_mcd_train.py	/^model = createModel(opt)$/;"	v
+model	src/mcd_train.py	/^model = createModel(opt)$/;"	v
+model	src/test.py	/^model = createModel(opt)$/;"	v
+model_urls	src/models/drn/drn.py	/^model_urls = {$/;"	v
+n	src/utils/iou_eval.py	/^    n = 1000000$/;"	v	class:IouEval
+name	src/dataset/base_dataset.py	/^    def name(self):$/;"	m	class:BaseDataset
+name	src/dataset/city_dataset.py	/^    def name(self):$/;"	m	class:CityDataSet
+name	src/dataset/concat_dataset.py	/^    def name(self):$/;"	m	class:ConcatDataset
+name	src/dataset/cycle_dataset.py	/^    def name(self):$/;"	m	class:CycleMcdDataset
+name	src/dataset/gta_dataset.py	/^    def name(self):$/;"	m	class:GTADataSet
+name	src/dataset/source_target_dataset.py	/^    def name(self):$/;"	m	class:SourceTargetDataset
+name	src/models/base_model.py	/^    def name(self):$/;"	m	class:BaseModel
+name	src/models/cycle_gan_model.py	/^    def name(self):$/;"	m	class:CycleGanModel
+name	src/models/cycle_mcd_model.py	/^    def name(self):$/;"	m	class:CycleMcdModel
+name	src/models/mcd_model.py	/^    def name(self):$/;"	m	class:MCDModel
+name	src/models/test_model.py	/^    def name(self):$/;"	m	class:TestModel
+newPath	src/datamanager/split_gta.py	/^        newPath = os.path.join(testDir, filename)$/;"	v
+newPath	src/datamanager/split_gta.py	/^        newPath = os.path.join(trainDir, filename)$/;"	v
+newPath	src/datamanager/split_gta.py	/^        newPath = os.path.join(valDir, filename)$/;"	v
+num_workers	src/cycle_gan_train.py	/^    num_workers=opt.nThreads)$/;"	v
+num_workers	src/cycle_mcd_train.py	/^    num_workers=opt.nThreads)$/;"	v
+num_workers	src/mcd_train.py	/^    num_workers=opt.nThreads)$/;"	v
+opt	src/cycle_gan_train.py	/^opt = CycleGanTrainOptions().parse()$/;"	v
+opt	src/cycle_mcd_train.py	/^opt = CycleMcdTrainOptions().parse()$/;"	v
+opt	src/evaluate.py	/^opt = parser.parse_args()$/;"	v
+opt	src/mcd_train.py	/^opt = McdTrainOptions().parse()$/;"	v
+opt	src/test.py	/^opt = TestOptions().parse()$/;"	v
+optim_parameters	src/models/drn/dilated_fcn.py	/^    def optim_parameters(self, memo=None):$/;"	m	class:DRNSeg
+optim_parameters	src/models/drn/dilated_fcn.py	/^    def optim_parameters(self, memo=None):$/;"	m	class:DRNSegBase
+optimize_parameters	src/models/base_model.py	/^    def optimize_parameters(self):$/;"	m	class:BaseModel
+optimize_parameters	src/models/cycle_gan_model.py	/^    def optimize_parameters(self):$/;"	m	class:CycleGanModel
+optimize_parameters	src/models/cycle_mcd_model.py	/^    def optimize_parameters(self):$/;"	m	class:CycleMcdModel
+optimize_parameters	src/models/mcd_model.py	/^    def optimize_parameters(self):$/;"	m	class:MCDModel
+optimize_parameters_cyclegan	src/models/cycle_mcd_model.py	/^    def optimize_parameters_cyclegan(self):$/;"	m	class:CycleMcdModel
+optimize_parameters_mcd	src/models/cycle_mcd_model.py	/^    def optimize_parameters_mcd(self):$/;"	m	class:CycleMcdModel
+originalPath	src/datamanager/split_gta.py	/^        originalPath = os.path.join(directory, filename)$/;"	v
+out_dir	src/datamanager/labels_gtav_to_20classes.py	/^out_dir = 'labels_gt'$/;"	v
+out_img	src/datamanager/labels_cityscrapes_to_20classes.py	/^  out_img = np.zeros(in_img.shape[0:2], dtype=np.uint8)$/;"	v
+out_img	src/datamanager/labels_gtav_to_20classes.py	/^  out_img = np.zeros(in_img.shape[0:2], dtype=np.uint8) + 19$/;"	v
+out_path	src/datamanager/labels_cityscrapes_to_20classes.py	/^  out_path = in_path.replace(in_pattern, out_pattern)$/;"	v
+out_path	src/datamanager/labels_gtav_to_20classes.py	/^  out_path = op.join(out_dir, op.basename(in_path))$/;"	v
+out_pattern	src/datamanager/labels_cityscrapes_to_20classes.py	/^out_pattern = 'gtFine_labelTrainIds.png'$/;"	v
+outputFile	src/datamanager/generate_txt.py	/^    outputFile = '..\/..\/Segmentation_dataset\/GTA\/image\/{}.txt'.format(tag)$/;"	v
+outputFilter	src/datamanager/generate_txt.py	/^    outputFilter = '..\/..\/Segmentation_dataset\/GTA\/image\/'$/;"	v
+p	src/datamanager/generate_txt.py	/^                p = os.path.join(root, filename).replace(outputFilter, '')$/;"	v
+palette20	src/utils/transform.py	/^palette20 = Palette(color20)$/;"	v
+palette35	src/utils/transform.py	/^palette35 = Palette(color35)$/;"	v
+parse	src/options/base_options.py	/^    def parse(self):$/;"	m	class:BaseOptions
+parse_args	src/models/drn/dilated_fcn.py	/^def parse_args():$/;"	f
+parser	src/evaluate.py	/^parser = argparse.ArgumentParser($/;"	v
+path	src/datamanager/generate_txt.py	/^    path=[]$/;"	v
+plot_im	src/cycle_gan_train.py	/^def plot_im(im):$/;"	f
+plot_im	src/cycle_mcd_train.py	/^def plot_im(im):$/;"	f
+plot_im	src/mcd_train.py	/^def plot_im(im):$/;"	f
+plot_im	src/test.py	/^def plot_im(im):$/;"	f
+plot_seg	src/cycle_gan_train.py	/^def plot_seg(im):$/;"	f
+plot_seg	src/cycle_mcd_train.py	/^def plot_seg(im):$/;"	f
+plot_seg	src/mcd_train.py	/^def plot_seg(im):$/;"	f
+plot_seg	src/test.py	/^def plot_seg(im):$/;"	f
+predFile	src/evaluate.py	/^        predFile = f$/;"	v
+predTensor	src/evaluate.py	/^        predTensor = torch.LongTensor(np.array(Image.open(os.path.join(opt.imageDir,predFile))))$/;"	v
+print_networks	src/models/base_model.py	/^    def print_networks(self, verbose):$/;"	m	class:BaseModel
+print_options	src/options/base_options.py	/^    def print_options(self):$/;"	m	class:BaseOptions
+query	src/utils/image_pool.py	/^    def query(self, images):$/;"	m	class:ImagePool
+read_lists	src/models/drn/dilated_fcn.py	/^    def read_lists(self):$/;"	m	class:SegList
+replace_first_conv	src/models/drn/drn.py	/^def replace_first_conv(res_model, input_ch, arch):$/;"	f
+reset	src/models/drn/dilated_fcn.py	/^    def reset(self):$/;"	m	class:AverageMeter
+reset	src/utils/iou_eval.py	/^    def reset(self):$/;"	m	class:IouEval
+reset	src/utils/timer.py	/^    def reset(self):$/;"	m	class:Timer
+reset	src/visualizer/base_visualizer.py	/^    def reset(self):$/;"	m	class:BaseVisualizer
+save_checkpoint	src/models/drn/dilated_fcn.py	/^def save_checkpoint(state, is_best, filename='checkpoint.pth.tar'):$/;"	f
+save_networks	src/models/base_model.py	/^    def save_networks(self, nEpoch):$/;"	m	class:BaseModel
+save_options	src/options/base_options.py	/^    def save_options(self, path):$/;"	m	class:BaseOptions
+save_output_images	src/models/drn/dilated_fcn.py	/^def save_output_images(predictions, filenames, output_dir):$/;"	f
+set_input	src/models/base_model.py	/^    def set_input(self, input):$/;"	m	class:BaseModel
+set_input	src/models/cycle_gan_model.py	/^    def set_input(self, input):$/;"	m	class:CycleGanModel
+set_input	src/models/cycle_mcd_model.py	/^    def set_input(self, input):$/;"	m	class:CycleMcdModel
+set_input	src/models/mcd_model.py	/^    def set_input(self, input):$/;"	m	class:MCDModel
+set_input	src/models/test_model.py	/^    def set_input(self, input):$/;"	m	class:TestModel
+set_lambda	src/models/drn/dilated_fcn.py	/^    def set_lambda(self, lambd):$/;"	m	class:DRNSegPixelClassifier
+set_requires_grad	src/models/base_model.py	/^    def set_requires_grad(self, nets, requires_grad=False):$/;"	m	class:BaseModel
+setup	src/models/base_model.py	/^    def setup(self, parser=None):$/;"	m	class:BaseModel
+source	src/cycle_gan_train.py	/^    source = datasetA,$/;"	v
+source	src/mcd_train.py	/^    source = sourceDataset,$/;"	v
+sourceDataset	src/mcd_train.py	/^sourceDataset = createDataset(opt.sourceDataset,$/;"	v
+split	src/datamanager/split_gta.py	/^split = scipy.io.loadmat(splitFile)$/;"	v
+splitFile	src/datamanager/split_gta.py	/^splitFile = '..\/..\/Segmentation_dataset\/GTA\/mapping\/split.mat'$/;"	v
+start_time	src/utils/iou_eval.py	/^    start_time = time.time()$/;"	v	class:IouEval
+steps	src/cycle_gan_train.py	/^steps = 0$/;"	v
+steps	src/cycle_mcd_train.py	/^steps = 0$/;"	v
+steps	src/mcd_train.py	/^steps = 0$/;"	v
+supervisedADataset	src/cycle_mcd_train.py	/^supervisedADataset = createDataset([opt.supervisedADataset], $/;"	v
+supervisedBDataset	src/cycle_mcd_train.py	/^supervisedBDataset = createDataset([opt.supervisedBDataset], $/;"	v
+tags	src/datamanager/generate_txt.py	/^tags = ['train', 'val', 'test']$/;"	v
+target	src/cycle_gan_train.py	/^    target = datasetB) $/;"	v
+target	src/mcd_train.py	/^    target = targetDataset) ,$/;"	v
+targetDataset	src/mcd_train.py	/^targetDataset = createDataset(opt.targetDataset,$/;"	v
+test	src/models/base_model.py	/^    def test(self):$/;"	m	class:BaseModel
+testDir	src/datamanager/split_gta.py	/^testDir='{}\/test'.format(directory)$/;"	v
+testIds	src/datamanager/split_gta.py	/^testIds = list(split['testIds'].reshape(-1))$/;"	v
+timer	src/utils/timer.py	/^    timer = Timer()$/;"	v	class:Timer
+train	src/models/base_model.py	/^    def train(self):$/;"	m	class:BaseModel
+train	src/models/drn/dilated_fcn.py	/^def train(train_loader, model, criterion, optimizer, epoch,$/;"	f
+trainDir	src/datamanager/split_gta.py	/^trainDir='{}\/train'.format(directory)$/;"	v
+trainIds	src/datamanager/split_gta.py	/^trainIds = list(split['trainIds'].reshape(-1))$/;"	v
+train_seg	src/models/drn/dilated_fcn.py	/^def train_seg(args):$/;"	f
+transform	src/cycle_gan_train.py	/^transform = Compose(transformList)$/;"	v
+transform	src/cycle_mcd_train.py	/^transform = Compose(transformList)$/;"	v
+transform	src/mcd_train.py	/^transform = Compose(transformList)$/;"	v
+transform	src/test.py	/^transform = Compose(transformList)$/;"	v
+transformList	src/cycle_gan_train.py	/^    transformList = [$/;"	v
+transformList	src/cycle_mcd_train.py	/^    transformList = [$/;"	v
+transformList	src/mcd_train.py	/^    transformList = [$/;"	v
+transformList	src/test.py	/^transformList = [$/;"	v
+unsupervisedADataset	src/cycle_mcd_train.py	/^unsupervisedADataset = createDataset([opt.unsupervisedADataset], $/;"	v
+unsupervisedBDataset	src/cycle_mcd_train.py	/^unsupervisedBDataset = createDataset([opt.unsupervisedBDataset], $/;"	v
+update	src/models/drn/dilated_fcn.py	/^    def update(self, val, n=1):$/;"	m	class:AverageMeter
+update	src/options/base_options.py	/^    def update(self):$/;"	m	class:BaseOptions
+update	src/utils/iou_eval.py	/^    def update(self, pred, gnd):$/;"	m	class:IouEval
+update_learning_rate	src/models/base_model.py	/^    def update_learning_rate(self):$/;"	m	class:BaseModel
+valDir	src/datamanager/split_gta.py	/^valDir='{}\/val'.format(directory)$/;"	v
+valIds	src/datamanager/split_gta.py	/^valIds = list(split['valIds'].reshape(-1))$/;"	v
+validate	src/models/drn/dilated_fcn.py	/^def validate(val_loader, model, criterion, eval_score=None, print_freq=10):$/;"	f
+value	src/datamanager/labels_gtav_to_20classes.py	/^    value =  map_color_to_20classes[key]$/;"	v
+visualizer	src/cycle_gan_train.py	/^visualizer = TrainVisualizer(opt, dataLoader.dataset).reset()$/;"	v
+visualizer	src/cycle_mcd_train.py	/^visualizer = TrainVisualizer(opt, dataLoader.dataset).reset()$/;"	v
+visualizer	src/mcd_train.py	/^visualizer = TrainVisualizer(opt, dataLoader.dataset).reset()$/;"	v
+visualizer	src/test.py	/^visualizer = TestVisualizer(opt, dataset)$/;"	v
+webroot	src/models/drn/drn.py	/^webroot = 'https:\/\/tigress-web.princeton.edu\/~fy\/drn\/models\/'$/;"	v
